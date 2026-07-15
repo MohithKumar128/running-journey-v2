@@ -24,11 +24,22 @@ def refresh():
         "error": result.stderr
     })
 
+from pathlib import Path
+import traceback
+
 @app.route("/stats")
 def stats():
-    with open("analytics.json", "r") as f:
-        return jsonify(json.load(f))
+    try:
+        path = Path(__file__).parent / "analytics.json"
 
+        with open(path, "r", encoding="utf-8") as f:
+            return jsonify(json.load(f))
+
+    except Exception as e:
+        return jsonify({
+            "error": str(e),
+            "trace": traceback.format_exc()
+        }), 500
 
 if __name__ == "__main__":
     import os
