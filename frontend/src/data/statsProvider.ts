@@ -1,6 +1,6 @@
 import type { Stats } from "./types";
 
-const API_URL = "https://running-journey.onrender.com/stats";
+const API_URL = "https://running-journey.onrender.com";
 
 export async function getStats(): Promise<Stats> {
   const response = await fetch(`${API_URL}/stats`);
