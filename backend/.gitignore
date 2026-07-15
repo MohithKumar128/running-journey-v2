@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated files
+activities.json
+activities.csv
+activites.csv
+analytics.json
+
+# OS files
+.DS_Store
+Thumbs.db
+

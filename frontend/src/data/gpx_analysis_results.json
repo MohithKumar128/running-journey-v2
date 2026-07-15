@@ -1,0 +1,660 @@
+[
+  {
+    "file": "16379693046.gpx",
+    "start_time": "2025-11-07T01:05:18",
+    "distance_m": 2632.097918901426,
+    "duration_s": 773.0,
+    "avg_pace_min_km": 4.894701386607427
+  },
+  {
+    "file": "16399779129.gpx",
+    "start_time": "2025-11-09T02:17:31",
+    "distance_m": 3130.9409020773924,
+    "duration_s": 1057.0,
+    "avg_pace_min_km": 5.6266365982755975
+  },
+  {
+    "file": "16577899738.gpx",
+    "start_time": "2025-11-10T01:45:15",
+    "distance_m": 3149.02031793945,
+    "duration_s": 1339.0,
+    "avg_pace_min_km": 7.086860170298774
+  },
+  {
+    "file": "16578448163.gpx",
+    "start_time": "2025-11-27T01:19:23",
+    "distance_m": 3279.0638700779364,
+    "duration_s": 907.0,
+    "avg_pace_min_km": 4.610055572448297
+  },
+  {
+    "file": "16587750488.gpx",
+    "start_time": "2025-11-28T01:22:12",
+    "distance_m": 3558.425582418048,
+    "duration_s": 1093.0,
+    "avg_pace_min_km": 5.119305222139264
+  },
+  {
+    "file": "16596047645.gpx",
+    "start_time": "2025-11-29T01:32:01",
+    "distance_m": 3040.3965270770404,
+    "duration_s": 805.0,
+    "avg_pace_min_km": 4.412801602416349
+  },
+  {
+    "file": "16600784905.gpx",
+    "start_time": "2025-11-29T13:51:44",
+    "distance_m": 5705.0553636370905,
+    "duration_s": 1858.0,
+    "avg_pace_min_km": 5.42793447089789
+  },
+  {
+    "file": "16605392975.gpx",
+    "start_time": "2025-11-30T01:22:05",
+    "distance_m": 1415.0037518412819,
+    "duration_s": 452.0,
+    "avg_pace_min_km": 5.3238963667273245
+  },
+  {
+    "file": "16611131800.gpx",
+    "start_time": "2025-11-30T13:48:28",
+    "distance_m": 9740.895254805835,
+    "duration_s": 3901.0,
+    "avg_pace_min_km": 6.674608951840396
+  },
+  {
+    "file": "16628682539.gpx",
+    "start_time": "2025-12-02T13:08:21",
+    "distance_m": 9262.375513709829,
+    "duration_s": 3128.0,
+    "avg_pace_min_km": 5.628505695560224
+  },
+  {
+    "file": "16639001199.gpx",
+    "start_time": "2025-12-03T13:55:50",
+    "distance_m": 6073.557449471321,
+    "duration_s": 2007.0,
+    "avg_pace_min_km": 5.507480628657212
+  },
+  {
+    "file": "16644156659.gpx",
+    "start_time": "2025-12-04T01:19:08",
+    "distance_m": 1554.0047625759596,
+    "duration_s": 425.0,
+    "avg_pace_min_km": 4.558115588778384
+  },
+  {
+    "file": "16648294134.gpx",
+    "start_time": "2025-12-04T13:44:22",
+    "distance_m": 6082.995767417484,
+    "duration_s": 1900.0,
+    "avg_pace_min_km": 5.205768321635813
+  },
+  {
+    "file": "16653301721.gpx",
+    "start_time": "2025-12-05T01:10:27",
+    "distance_m": 5100.573908058182,
+    "duration_s": 1685.0,
+    "avg_pace_min_km": 5.505916361483491
+  },
+  {
+    "file": "16661713389.gpx",
+    "start_time": "2025-12-06T01:11:10",
+    "distance_m": 7363.215470565318,
+    "duration_s": 2412.0,
+    "avg_pace_min_km": 5.459571319174448
+  },
+  {
+    "file": "16680595474.gpx",
+    "start_time": "2025-12-08T01:21:11",
+    "distance_m": 6067.635444171001,
+    "duration_s": 2023.0,
+    "avg_pace_min_km": 5.556804949291619
+  },
+  {
+    "file": "16689820071.gpx",
+    "start_time": "2025-12-09T01:02:16",
+    "distance_m": 6178.780191705705,
+    "duration_s": 1859.0,
+    "avg_pace_min_km": 5.014474114959594
+  },
+  {
+    "file": "16699555264.gpx",
+    "start_time": "2025-12-10T01:03:05",
+    "distance_m": 6133.368780534718,
+    "duration_s": 1938.0,
+    "avg_pace_min_km": 5.266273911738278
+  },
+  {
+    "file": "16709267359.gpx",
+    "start_time": "2025-12-11T00:56:24",
+    "distance_m": 5163.75828241281,
+    "duration_s": 3464.0,
+    "avg_pace_min_km": 11.180487190883177
+  },
+  {
+    "file": "16718314514.gpx",
+    "start_time": "2025-12-12T00:36:11",
+    "distance_m": 7050.608078720962,
+    "duration_s": 2369.0,
+    "avg_pace_min_km": 5.599989801233702
+  },
+  {
+    "file": "16740667814.gpx",
+    "start_time": "2025-12-14T13:13:34",
+    "distance_m": 4427.334166037189,
+    "duration_s": 1448.0,
+    "avg_pace_min_km": 5.450985272009535
+  },
+  {
+    "file": "16754064683.gpx",
+    "start_time": "2025-12-16T01:19:49",
+    "distance_m": 5057.119818635181,
+    "duration_s": 1612.0,
+    "avg_pace_min_km": 5.3126419049168305
+  },
+  {
+    "file": "16772721656.gpx",
+    "start_time": "2025-12-18T01:12:34",
+    "distance_m": 2136.86913053585,
+    "duration_s": 1143.0,
+    "avg_pace_min_km": 8.914911881020503
+  },
+  {
+    "file": "16784109427.gpx",
+    "start_time": "2025-12-19T11:50:00",
+    "distance_m": 5031.418883193673,
+    "duration_s": 1273.0,
+    "avg_pace_min_km": 4.216835679799229
+  },
+  {
+    "file": "16828667796.gpx",
+    "start_time": "2025-12-24T11:41:47",
+    "distance_m": 6143.26956211205,
+    "duration_s": 2210.0,
+    "avg_pace_min_km": 5.995721490148981
+  },
+  {
+    "file": "16836364923.gpx",
+    "start_time": "2025-12-25T11:45:39",
+    "distance_m": 5049.614742941413,
+    "duration_s": 1491.0,
+    "avg_pace_min_km": 4.921167507825521
+  },
+  {
+    "file": "16844441781.gpx",
+    "start_time": "2025-12-26T12:35:49",
+    "distance_m": 5058.339004107785,
+    "duration_s": 1614.0,
+    "avg_pace_min_km": 5.317951204566361
+  },
+  {
+    "file": "16865130089.gpx",
+    "start_time": "2025-12-28T13:28:46",
+    "distance_m": 11009.536236302622,
+    "duration_s": 3852.0,
+    "avg_pace_min_km": 5.831308296920649
+  },
+  {
+    "file": "16883528568.gpx",
+    "start_time": "2025-12-30T12:16:09",
+    "distance_m": 9111.615330451703,
+    "duration_s": 2970.0,
+    "avg_pace_min_km": 5.432626181503436
+  },
+  {
+    "file": "16893325983.gpx",
+    "start_time": "2025-12-31T11:46:24",
+    "distance_m": 6059.046251647158,
+    "duration_s": 2120.0,
+    "avg_pace_min_km": 5.831500844498081
+  },
+  {
+    "file": "16902676752.gpx",
+    "start_time": "2026-01-01T12:10:01",
+    "distance_m": 7547.178077987653,
+    "duration_s": 3921.0,
+    "avg_pace_min_km": 8.658865515655705
+  },
+  {
+    "file": "16911775769.gpx",
+    "start_time": "2026-01-02T12:07:58",
+    "distance_m": 5092.958153843763,
+    "duration_s": 1710.0,
+    "avg_pace_min_km": 5.59596194178239
+  },
+  {
+    "file": "16934057760.gpx",
+    "start_time": "2026-01-04T12:04:43",
+    "distance_m": 8088.7689256677,
+    "duration_s": 2684.0,
+    "avg_pace_min_km": 5.530301798013194
+  },
+  {
+    "file": "16955455936.gpx",
+    "start_time": "2026-01-06T11:45:37",
+    "distance_m": 5150.303392810793,
+    "duration_s": 1639.0,
+    "avg_pace_min_km": 5.303894660807257
+  },
+  {
+    "file": "17065523594.gpx",
+    "start_time": "2026-01-16T02:35:55",
+    "distance_m": 3222.548581942991,
+    "duration_s": 1002.0,
+    "avg_pace_min_km": 5.182233743061514
+  },
+  {
+    "file": "17138297169.gpx",
+    "start_time": "2026-01-22T12:14:48",
+    "distance_m": 5046.988375430287,
+    "duration_s": 1762.0,
+    "avg_pace_min_km": 5.81865153675195
+  },
+  {
+    "file": "17160304986.gpx",
+    "start_time": "2026-01-24T12:17:21",
+    "distance_m": 6061.361173336307,
+    "duration_s": 2085.0,
+    "avg_pace_min_km": 5.7330357004403405
+  },
+  {
+    "file": "17200670752.gpx",
+    "start_time": "2026-01-28T01:03:05",
+    "distance_m": 5082.558320223516,
+    "duration_s": 1695.0,
+    "avg_pace_min_km": 5.5582244649497
+  },
+  {
+    "file": "17212256425.gpx",
+    "start_time": "2026-01-29T01:12:53",
+    "distance_m": 5048.116279148105,
+    "duration_s": 1755.0,
+    "avg_pace_min_km": 5.794240540936209
+  },
+  {
+    "file": "17233186528.gpx",
+    "start_time": "2026-01-31T01:25:37",
+    "distance_m": 6042.165919624154,
+    "duration_s": 1987.0,
+    "avg_pace_min_km": 5.480926394144213
+  },
+  {
+    "file": "17256153106.gpx",
+    "start_time": "2026-02-02T01:31:27",
+    "distance_m": 5074.150111359628,
+    "duration_s": 1635.0,
+    "avg_pace_min_km": 5.370357478978546
+  },
+  {
+    "file": "17266874515.gpx",
+    "start_time": "2026-02-03T00:48:23",
+    "distance_m": 5053.39419857747,
+    "duration_s": 1650.0,
+    "avg_pace_min_km": 5.441886961389485
+  },
+  {
+    "file": "17311968464.gpx",
+    "start_time": "2026-02-07T01:14:33",
+    "distance_m": 3518.1976512575707,
+    "duration_s": 1264.0,
+    "avg_pace_min_km": 5.987914482046351
+  },
+  {
+    "file": "17323323627.gpx",
+    "start_time": "2026-02-08T00:53:49",
+    "distance_m": 5245.371588552483,
+    "duration_s": 1709.0,
+    "avg_pace_min_km": 5.430184087528795
+  },
+  {
+    "file": "17345990695.gpx",
+    "start_time": "2026-02-10T01:22:55",
+    "distance_m": 6100.296193610365,
+    "duration_s": 1920.0,
+    "avg_pace_min_km": 5.245646929983133
+  },
+  {
+    "file": "17369091267.gpx",
+    "start_time": "2026-02-12T01:11:22",
+    "distance_m": 5041.531950495881,
+    "duration_s": 1761.0,
+    "avg_pace_min_km": 5.821643160887468
+  },
+  {
+    "file": "17388291096.gpx",
+    "start_time": "2026-02-13T19:29:25",
+    "distance_m": 12343.559851997705,
+    "duration_s": 9896.0,
+    "avg_pace_min_km": 13.361893595601613
+  },
+  {
+    "file": "17434648371.gpx",
+    "start_time": "2026-02-18T01:22:20",
+    "distance_m": 5089.100385161851,
+    "duration_s": 1725.0,
+    "avg_pace_min_km": 5.649328530406981
+  },
+  {
+    "file": "17445701625.gpx",
+    "start_time": "2026-02-19T00:39:18",
+    "distance_m": 7239.949657461063,
+    "duration_s": 2432.0,
+    "avg_pace_min_km": 5.598565632505757
+  },
+  {
+    "file": "17466751285.gpx",
+    "start_time": "2026-02-21T00:52:26",
+    "distance_m": 3212.1201259946856,
+    "duration_s": 1085.0,
+    "avg_pace_min_km": 5.629718884729921
+  },
+  {
+    "file": "17505497937.gpx",
+    "start_time": "2026-02-24T13:13:04",
+    "distance_m": 2046.1130738070642,
+    "duration_s": 619.0,
+    "avg_pace_min_km": 5.0420804200576965
+  },
+  {
+    "file": "17517569081.gpx",
+    "start_time": "2026-02-25T12:37:59",
+    "distance_m": 5058.661508348385,
+    "duration_s": 1268.0,
+    "avg_pace_min_km": 4.177653179295882
+  },
+  {
+    "file": "17630483799.gpx",
+    "start_time": "2026-03-07T00:43:35",
+    "distance_m": 5147.8657925574935,
+    "duration_s": 1565.0,
+    "avg_pace_min_km": 5.066824657908372
+  },
+  {
+    "file": "17642785905.gpx",
+    "start_time": "2026-03-08T02:00:07",
+    "distance_m": 2391.6414510019977,
+    "duration_s": 560.0,
+    "avg_pace_min_km": 3.9024801687657056
+  },
+  {
+    "file": "17684748847.gpx",
+    "start_time": "2026-03-11T12:47:58",
+    "distance_m": 4112.155224342077,
+    "duration_s": 1156.0,
+    "avg_pace_min_km": 4.685296545377668
+  },
+  {
+    "file": "17708074966.gpx",
+    "start_time": "2026-03-13T13:11:56",
+    "distance_m": 6435.018762381189,
+    "duration_s": 2181.0,
+    "avg_pace_min_km": 5.648779178780388
+  },
+  {
+    "file": "17719727204.gpx",
+    "start_time": "2026-03-14T13:06:42",
+    "distance_m": 10154.252306006241,
+    "duration_s": 3540.0,
+    "avg_pace_min_km": 5.81037364662502
+  },
+  {
+    "file": "17741811812.gpx",
+    "start_time": "2026-03-16T12:43:45",
+    "distance_m": 4039.318036371227,
+    "duration_s": 1112.0,
+    "avg_pace_min_km": 4.588233252854482
+  },
+  {
+    "file": "17766807521.gpx",
+    "start_time": "2026-03-18T13:19:58",
+    "distance_m": 6070.811169414543,
+    "duration_s": 1907.0,
+    "avg_pace_min_km": 5.235434350760486
+  },
+  {
+    "file": "17791941068.gpx",
+    "start_time": "2026-03-20T12:54:47",
+    "distance_m": 21575.133141546863,
+    "duration_s": 7633.0,
+    "avg_pace_min_km": 5.8964487418011675
+  },
+  {
+    "file": "17809976622.gpx",
+    "start_time": "2026-03-22T01:04:00",
+    "distance_m": 7192.424222891111,
+    "duration_s": 2363.0,
+    "avg_pace_min_km": 5.475668858350873
+  },
+  {
+    "file": "17835196747.gpx",
+    "start_time": "2026-03-24T01:17:29",
+    "distance_m": 5105.15221506701,
+    "duration_s": 1559.0,
+    "avg_pace_min_km": 5.089629503435341
+  },
+  {
+    "file": "17853509163.gpx",
+    "start_time": "2026-03-25T13:09:26",
+    "distance_m": 7257.488210835933,
+    "duration_s": 2328.0,
+    "avg_pace_min_km": 5.346202277265695
+  },
+  {
+    "file": "17882893458.gpx",
+    "start_time": "2026-03-28T00:51:21",
+    "distance_m": 5043.013492705707,
+    "duration_s": 1629.0,
+    "avg_pace_min_km": 5.383685774243948
+  },
+  {
+    "file": "17968684796.gpx",
+    "start_time": "2026-04-04T00:24:55",
+    "distance_m": 3030.2829818108094,
+    "duration_s": 899.0,
+    "avg_pace_min_km": 4.944532713040459
+  },
+  {
+    "file": "17981846558.gpx",
+    "start_time": "2026-04-05T01:12:01",
+    "distance_m": 5080.372210694118,
+    "duration_s": 1696.0,
+    "avg_pace_min_km": 5.563896796216171
+  },
+  {
+    "file": "18035431952.gpx",
+    "start_time": "2026-04-09T01:14:59",
+    "distance_m": 5091.121620785613,
+    "duration_s": 1698.0,
+    "avg_pace_min_km": 5.558696512858598
+  },
+  {
+    "file": "18073045400.gpx",
+    "start_time": "2026-04-12T00:10:19",
+    "distance_m": 7099.30995395589,
+    "duration_s": 2402.0,
+    "avg_pace_min_km": 5.639045709086964
+  },
+  {
+    "file": "18086424520.gpx",
+    "start_time": "2026-04-13T00:48:16",
+    "distance_m": 4597.223057921245,
+    "duration_s": 1565.0,
+    "avg_pace_min_km": 5.673714980696977
+  },
+  {
+    "file": "18098859251.gpx",
+    "start_time": "2026-04-14T01:02:14",
+    "distance_m": 4125.299131727855,
+    "duration_s": 1366.0,
+    "avg_pace_min_km": 5.518791714173464
+  },
+  {
+    "file": "18126450976.gpx",
+    "start_time": "2026-04-16T01:22:30",
+    "distance_m": 2057.456471311858,
+    "duration_s": 1318.0,
+    "avg_pace_min_km": 10.676613076854288
+  },
+  {
+    "file": "18152001602.gpx",
+    "start_time": "2026-04-18T01:14:03",
+    "distance_m": 6160.514333185012,
+    "duration_s": 1910.0,
+    "avg_pace_min_km": 5.167317469233995
+  },
+  {
+    "file": "18179179740.gpx",
+    "start_time": "2026-04-20T01:20:58",
+    "distance_m": 4299.612049951105,
+    "duration_s": 1351.0,
+    "avg_pace_min_km": 5.236906587170515
+  },
+  {
+    "file": "18191503185.gpx",
+    "start_time": "2026-04-21T00:33:25",
+    "distance_m": 3086.1467332851976,
+    "duration_s": 1085.0,
+    "avg_pace_min_km": 5.8595183237070705
+  },
+  {
+    "file": "18273279732.gpx",
+    "start_time": "2026-04-27T00:39:55",
+    "distance_m": 5064.319292579307,
+    "duration_s": 1630.0,
+    "avg_pace_min_km": 5.364327384822219
+  },
+  {
+    "file": "18285979643.gpx",
+    "start_time": "2026-04-28T00:31:12",
+    "distance_m": 2533.8189720232917,
+    "duration_s": 741.0,
+    "avg_pace_min_km": 4.874065644136504
+  },
+  {
+    "file": "18300006588.gpx",
+    "start_time": "2026-04-29T00:15:03",
+    "distance_m": 6515.783731963881,
+    "duration_s": 1861.0,
+    "avg_pace_min_km": 4.760235750998158
+  },
+  {
+    "file": "18325718299.gpx",
+    "start_time": "2026-04-30T23:55:15",
+    "distance_m": 5056.403700984458,
+    "duration_s": 1597.0,
+    "avg_pace_min_km": 5.263952057760841
+  },
+  {
+    "file": "18379218416.gpx",
+    "start_time": "2026-05-05T00:16:45",
+    "distance_m": 3089.599711228309,
+    "duration_s": 1041.0,
+    "avg_pace_min_km": 5.615614196540138
+  },
+  {
+    "file": "18406606596.gpx",
+    "start_time": "2026-05-07T00:35:36",
+    "distance_m": 5049.518246090294,
+    "duration_s": 1609.0,
+    "avg_pace_min_km": 5.310737650553118
+  },
+  {
+    "file": "18432104939.gpx",
+    "start_time": "2026-05-09T00:52:31",
+    "distance_m": 1576.567120067259,
+    "duration_s": 969.0,
+    "avg_pace_min_km": 10.24377572920017
+  },
+  {
+    "file": "18432346439.gpx",
+    "start_time": "2026-05-09T01:12:20",
+    "distance_m": 5806.966693440298,
+    "duration_s": 1968.0,
+    "avg_pace_min_km": 5.648387829923623
+  },
+  {
+    "file": "18446330765.gpx",
+    "start_time": "2026-05-10T01:38:04",
+    "distance_m": 10150.780936907902,
+    "duration_s": 3794.0,
+    "avg_pace_min_km": 6.229405769502821
+  },
+  {
+    "file": "18471266672.gpx",
+    "start_time": "2026-05-12T01:02:42",
+    "distance_m": 2019.8499382778684,
+    "duration_s": 638.0,
+    "avg_pace_min_km": 5.264417485587742
+  },
+  {
+    "file": "18485524709.gpx",
+    "start_time": "2026-05-13T01:32:58",
+    "distance_m": 5057.759265422539,
+    "duration_s": 1841.0,
+    "avg_pace_min_km": 6.066586352399271
+  },
+  {
+    "file": "18498413162.gpx",
+    "start_time": "2026-05-14T00:52:23",
+    "distance_m": 7669.6404877628975,
+    "duration_s": 3530.0,
+    "avg_pace_min_km": 7.670937565744233
+  },
+  {
+    "file": "18536330210.gpx",
+    "start_time": "2026-05-17T00:38:27",
+    "distance_m": 5091.623851114325,
+    "duration_s": 1785.0,
+    "avg_pace_min_km": 5.8429296566141815
+  },
+  {
+    "file": "18562659982.gpx",
+    "start_time": "2026-05-19T01:54:19",
+    "distance_m": 4068.7961182091594,
+    "duration_s": 1395.0,
+    "avg_pace_min_km": 5.714220945096963
+  },
+  {
+    "file": "18628281774.gpx",
+    "start_time": "2026-05-24T00:26:51",
+    "distance_m": 5081.489539052249,
+    "duration_s": 1681.0,
+    "avg_pace_min_km": 5.513475222442763
+  },
+  {
+    "file": "18641861062.gpx",
+    "start_time": "2026-05-25T00:25:17",
+    "distance_m": 5086.912951849091,
+    "duration_s": 1871.0,
+    "avg_pace_min_km": 6.130109484574176
+  },
+  {
+    "file": "18696776635.gpx",
+    "start_time": "2026-05-29T00:55:20",
+    "distance_m": 5090.800659174956,
+    "duration_s": 1764.0,
+    "avg_pace_min_km": 5.7751230048683
+  },
+  {
+    "file": "18722182141.gpx",
+    "start_time": "2026-05-31T00:11:27",
+    "distance_m": 5520.999585576053,
+    "duration_s": 2181.0,
+    "avg_pace_min_km": 6.5839526767882015
+  },
+  {
+    "file": "18803469952.gpx",
+    "start_time": "2026-06-06T00:35:13",
+    "distance_m": 4090.3262677508474,
+    "duration_s": 1442.0,
+    "avg_pace_min_km": 5.875651906503921
+  },
+  {
+    "file": "18844672764.gpx",
+    "start_time": "2026-06-09T01:02:02",
+    "distance_m": 5077.784993922345,
+    "duration_s": 1773.0,
+    "avg_pace_min_km": 5.819466565710977
+  }
+]
