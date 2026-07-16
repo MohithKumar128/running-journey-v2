@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import subprocess
 import json
@@ -41,6 +41,18 @@ def stats():
             "trace": traceback.format_exc()
         }), 500
 
+
+
+@app.route("/webhook", methods=["GET", "POST"])
+def webhook():
+    if request.method == "GET":
+        return {
+            "hub.challenge": request.args.get("hub.challenge")
+        }
+
+    print("Webhook Event:", request.json)
+
+    return "", 200
 if __name__ == "__main__":
     import os
     app.run(
