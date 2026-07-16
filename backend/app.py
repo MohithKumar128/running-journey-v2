@@ -50,13 +50,17 @@ def webhook():
             "hub.challenge": request.args.get("hub.challenge")
         }
 
-    print("Webhook Event:", request.json)
+    print("=" * 50)
+    print("WEBHOOK RECEIVED")
+    print(request.json)
+    print("=" * 50)
 
     return "", 200
+    
 if __name__ == "__main__":
     import os
     app.run(
         host="0.0.0.0",
-        port=int(os.environ.get("PORT", 5000)),
+S        port=int(os.environ.get("PORT", 5000)),
         debug=False
     )
