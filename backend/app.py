@@ -2,13 +2,18 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import subprocess
 import json
+from pathlib import Path
+import traceback
+import os
 
 app = Flask(__name__)
 CORS(app)
 
+
 @app.route("/")
 def home():
     return {"message": "Strava Backend Running"}
+
 
 @app.route("/refresh", methods=["POST"])
 def refresh():
@@ -24,8 +29,6 @@ def refresh():
         "error": result.stderr
     })
 
-from pathlib import Path
-import traceback
 
 @app.route("/stats")
 def stats():
@@ -42,23 +45,44 @@ def stats():
         }), 500
 
 
-
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
+    # Strava verification request
     if request.method == "GET":
         return {
             "hub.challenge": request.args.get("hub.challenge")
         }
 
+    # Webhook event
+    event = request.json
+
     print("=" * 50)
     print("WEBHOOK RECEIVED")
-    print(request.json)
+    print(event)
     print("=" * 50)
 
+    # Only process new activities
+    if (
+        event.get("object_type") == "activity"
+        and event.get("aspect_type") == "create"
+    ):
+        print("New activity detected. Running update.py...")
+
+        result = subprocess.run(
+            ["python3", "update.py"],
+            capture_output=True,
+            text=True
+        )
+
+        print(result.stdout)
+
+        if result.stderr:
+            print(result.stderr)
+
     return "", 200
-    
+
+
 if __name__ == "__main__":
-    import os
     app.run(
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 5000)),
