@@ -6,6 +6,8 @@ from pathlib import Path
 import traceback
 import os
 
+import sys
+
 app = Flask(__name__)
 CORS(app)
 
@@ -17,8 +19,10 @@ def home():
 
 @app.route("/refresh", methods=["POST"])
 def refresh():
+    backend_dir = Path(__file__).parent
     result = subprocess.run(
-        ["python3", "update.py"],
+        [sys.executable, "update.py"],
+        cwd=str(backend_dir),
         capture_output=True,
         text=True
     )
@@ -68,8 +72,10 @@ def webhook():
     ):
         print("New activity detected. Running update.py...")
 
+        backend_dir = Path(__file__).parent
         result = subprocess.run(
-            ["python3", "update.py"],
+            [sys.executable, "update.py"],
+            cwd=str(backend_dir),
             capture_output=True,
             text=True
         )

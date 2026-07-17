@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import sys
 from dotenv import load_dotenv
 
 # Load variables from .env
@@ -27,7 +28,7 @@ token_data = response.json()
 if "access_token" not in token_data:
     print("ERROR FROM STRAVA:")
     print(token_data)
-    exit()
+    sys.exit(1)
 
 access_token = token_data["access_token"]
 print("Access token obtained")

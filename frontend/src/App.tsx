@@ -40,6 +40,10 @@ function App() {
       }
     }
     loadStats();
+
+    // Automatically poll for new stats every 30 seconds to support live updates from webhook events
+    const interval = setInterval(loadStats, 30000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -58,9 +62,7 @@ function App() {
       <main className="bg-brand-black w-full overflow-x-hidden selection:bg-brand-orange selection:text-brand-black relative z-10">
         {/* Hero Section */}
         <Hero 
-          totalDistance={stats.summary.totalDistance} 
-          totalTime={stats.summary.totalTime}
-          avgPace={stats.summary.averagePace}
+          stats={stats}
           onRefreshSuccess={handleRefreshSuccess}
         />
 

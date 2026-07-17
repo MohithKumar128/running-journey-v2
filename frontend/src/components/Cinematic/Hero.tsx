@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, Timer, Zap, TrendingUp, ArrowUpRight } from 'lucide-react';
-import { getStats } from '../../data/statsProvider';
+import { API_URL } from '../../data/statsProvider';
 import type { Stats } from '../../data/types';
 
 const InstagramIcon = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
@@ -24,10 +24,8 @@ const InstagramIcon = ({ size = 24, className = "" }: { size?: number; className
 );
 
 interface HeroProps {
-  totalDistance: number;
-  totalTime: number;
-  avgPace: number;
-  onRefreshSuccess?: () => void;
+  stats: Stats;
+  onRefreshSuccess?: () => Promise<void>;
 }
 
 interface AnimatedCounterProps {
@@ -68,13 +66,12 @@ const AnimatedCounter = ({ value, duration = 2000, decimals = 2, label, icon: Ic
   );
 };
 
-const Hero: React.FC<HeroProps> = ({ totalDistance, totalTime, avgPace, onRefreshSuccess }) => {
+const Hero: React.FC<HeroProps> = ({ stats, onRefreshSuccess }) => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const y = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1.1, 1.3]);
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [stats, setStats] = useState<Stats | null>(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [refreshStatus, setRefreshStatus] = useState<'success' | 'error' | null>(null);
 
@@ -82,18 +79,16 @@ const Hero: React.FC<HeroProps> = ({ totalDistance, totalTime, avgPace, onRefres
     setIsRefreshing(true);
     setRefreshStatus(null);
     try {
-      const response = await fetch("http://127.0.0.1:5000/refresh", {
+      const response = await fetch(`${API_URL}/refresh`, {
         method: "POST"
       });
       if (!response.ok) {
         throw new Error("Refresh failed");
       }
-      const data = await getStats();
-      setStats(data);
-      setRefreshStatus("success");
       if (onRefreshSuccess) {
-        onRefreshSuccess();
+        await onRefreshSuccess();
       }
+      setRefreshStatus("success");
     } catch (err) {
       console.error("Hero: Refresh failed", err);
       setRefreshStatus("error");
@@ -101,20 +96,6 @@ const Hero: React.FC<HeroProps> = ({ totalDistance, totalTime, avgPace, onRefres
       setIsRefreshing(false);
     }
   };
-
-  useEffect(() => {
-    let active = true;
-    getStats()
-      .then((data) => {
-        if (active) setStats(data);
-      })
-      .catch((err) => {
-        console.error("Hero: Failed to fetch stats", err);
-      });
-    return () => {
-      active = false;
-    };
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -234,10 +215,10 @@ const Hero: React.FC<HeroProps> = ({ totalDistance, totalTime, avgPace, onRefres
           className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-24 border-y border-brand-white/5 py-16 px-8 relative"
         >
           <div className="absolute inset-0 bg-brand-white/[0.02] -z-10" />
-          <AnimatedCounter value={stats ? stats.summary.runningDistance : totalDistance} label="Total KM" icon={TrendingUp} />
-          <AnimatedCounter value={stats ? stats.summary.runningActivities : 94} decimals={0} label="Activities" icon={Zap} />
-          <AnimatedCounter value={stats ? stats.summary.totalTime / 60 : totalTime / 60} decimals={1} label="hrs" icon={Timer} />
-          <AnimatedCounter value={stats ? stats.summary.averagePace : avgPace} label="Avg Pace" icon={TrendingUp} />
+          <AnimatedCounter value={stats.summary.runningDistance} label="Total KM" icon={TrendingUp} />
+          <AnimatedCounter value={stats.summary.runningActivities} decimals={0} label="Activities" icon={Zap} />
+          <AnimatedCounter value={stats.summary.totalTime / 60} decimals={1} label="hrs" icon={Timer} />
+          <AnimatedCounter value={stats.summary.averagePace} label="Avg Pace" icon={TrendingUp} />
         </motion.div>
 
         {/* Refresh from Strava Button */}
