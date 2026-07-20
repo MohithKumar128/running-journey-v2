@@ -215,7 +215,7 @@ const Hero: React.FC<HeroProps> = ({ stats, onRefreshSuccess }) => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-24 border-y border-brand-white/5 py-16 px-8 relative"
         >
           <div className="absolute inset-0 bg-brand-white/[0.02] -z-10" />
-          <AnimatedCounter value={stats.summary.runningDistance} label="Total KM" icon={TrendingUp} />
+          <AnimatedCounter value={stats.summary.totalDistance} label="Total KM" icon={TrendingUp} />
           <AnimatedCounter value={stats.summary.runningActivities} decimals={0} label="Activities" icon={Zap} />
           <AnimatedCounter value={stats.summary.totalTime / 60} decimals={1} label="hrs" icon={Timer} />
           <AnimatedCounter value={stats.summary.averagePace} label="Avg Pace" icon={TrendingUp} />
