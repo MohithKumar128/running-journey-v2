@@ -29,7 +29,7 @@ interface HeroProps {
 }
 
 interface AnimatedCounterProps {
-  value: number;
+  value: number | string;
   duration?: number;
   decimals?: number;
   label: string;
@@ -37,29 +37,74 @@ interface AnimatedCounterProps {
 }
 
 const AnimatedCounter = ({ value, duration = 2000, decimals = 2, label, icon: Icon }: AnimatedCounterProps) => {
-  const [count, setCount] = useState(0);
+  const [displayValue, setDisplayValue] = useState<string | number>("");
 
   useEffect(() => {
-    let start = 0;
-    const end = value;
-    const increment = end / (duration / 16);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(start);
+    if (typeof value === "string") {
+      // Check if it's formatted_time: e.g. "56h 17m"
+      const timeMatch = value.match(/^(\d+)h\s*(\d+)m$/);
+      if (timeMatch) {
+        const targetHours = parseInt(timeMatch[1], 10);
+        const targetMinutes = parseInt(timeMatch[2], 10);
+        let start = 0;
+        const totalSteps = duration / 16;
+        const timer = setInterval(() => {
+          start += 1;
+          const currentHours = Math.min(Math.round((start / totalSteps) * targetHours), targetHours);
+          const currentMinutes = Math.min(Math.round((start / totalSteps) * targetMinutes), targetMinutes);
+          setDisplayValue(`${currentHours}h ${currentMinutes}m`);
+          if (start >= totalSteps) {
+            setDisplayValue(`${targetHours}h ${targetMinutes}m`);
+            clearInterval(timer);
+          }
+        }, 16);
+        return () => clearInterval(timer);
       }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [value, duration]);
+
+      // Check if it's avg_pace: e.g. "5:35/km"
+      const paceMatch = value.match(/^(\d+):(\d+)\/km$/);
+      if (paceMatch) {
+        const targetMin = parseInt(paceMatch[1], 10);
+        const targetSec = parseInt(paceMatch[2], 10);
+        let start = 0;
+        const totalSteps = duration / 16;
+        const timer = setInterval(() => {
+          start += 1;
+          const currentMin = Math.min(Math.round((start / totalSteps) * targetMin), targetMin);
+          const currentSec = Math.min(Math.round((start / totalSteps) * targetSec), targetSec);
+          setDisplayValue(`${currentMin}:${currentSec.toString().padStart(2, '0')}/km`);
+          if (start >= totalSteps) {
+            setDisplayValue(`${targetMin}:${targetSec.toString().padStart(2, '0')}/km`);
+            clearInterval(timer);
+          }
+        }, 16);
+        return () => clearInterval(timer);
+      }
+
+      // Fallback
+      setDisplayValue(value);
+    } else {
+      let start = 0;
+      const end = value;
+      const increment = end / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setDisplayValue(end.toFixed(decimals));
+          clearInterval(timer);
+        } else {
+          setDisplayValue(start.toFixed(decimals));
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    }
+  }, [value, duration, decimals]);
 
   return (
     <div className="flex flex-col items-center">
       <div className="text-brand-orange mb-2"><Icon size={24} /></div>
       <div className="text-2xl md:text-4xl font-black text-brand-white">
-        {count.toFixed(decimals)}
+        {displayValue}
       </div>
       <div className="text-[10px] font-bold text-brand-white/40 uppercase tracking-widest">{label}</div>
     </div>
@@ -215,10 +260,10 @@ const Hero: React.FC<HeroProps> = ({ stats, onRefreshSuccess }) => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-24 border-y border-brand-white/5 py-16 px-8 relative"
         >
           <div className="absolute inset-0 bg-brand-white/[0.02] -z-10" />
-          <AnimatedCounter value={stats.summary.totalDistance} label="Total KM" icon={TrendingUp} />
-          <AnimatedCounter value={stats.summary.runningActivities} decimals={0} label="Activities" icon={Zap} />
-          <AnimatedCounter value={stats.summary.totalTime / 60} decimals={1} label="hrs" icon={Timer} />
-          <AnimatedCounter value={stats.summary.averagePace} label="Avg Pace" icon={TrendingUp} />
+          <AnimatedCounter value={stats.summary.running.distance} label="RUNNING KM" icon={TrendingUp} />
+          <AnimatedCounter value={stats.summary.running.activities} decimals={0} label="RUNS" icon={Zap} />
+          <AnimatedCounter value={stats.summary.running.formatted_time} label="RUNNING TIME" icon={Timer} />
+          <AnimatedCounter value={stats.summary.running.avg_pace} label="AVG PACE" icon={TrendingUp} />
         </motion.div>
 
         {/* Refresh from Strava Button */}

@@ -81,64 +81,87 @@ def parse_activities(file_path: str) -> List[Dict[str, Any]]:
         print(f"Error: Source file '{file_path}' not found.")
     return activities
 
+def format_pace(total_time_min: float, total_dist_km: float) -> str:
+    if total_dist_km <= 0:
+        return "0:00/km"
+    pace_raw = total_time_min / total_dist_km
+    minutes = int(pace_raw)
+    seconds = int(round((pace_raw - minutes) * 60))
+    if seconds == 60:
+        minutes += 1
+        seconds = 0
+    return f"{minutes}:{seconds:02d}/km"
+
 def calculate_summary(activities: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
     Calculates summary metrics across all activities.
     """
-    summary = {
-        "totalActivities": len(activities),
-        "runningActivities": 0,
-        "cyclingActivities": 0,
-        "walkingActivities": 0,
-        "hikingActivities": 0,
-        "trailRunningActivities": 0,
-        "totalDistance": 0.0,
-        "runningDistance": 0.0,
-        "cyclingDistance": 0.0,
-        "walkingDistance": 0.0,
-        "hikingDistance": 0.0,
-        "trailRunningDistance": 0.0,
-        "totalTime": 0.0,
-        "averagePace": 0.0,
-        "totalElevation": 0.0
+    sports = {
+        "running": {"distance": 0.0, "activities": 0, "moving_time": 0.0, "elevation_gain": 0.0},
+        "cycling": {"distance": 0.0, "activities": 0, "moving_time": 0.0, "elevation_gain": 0.0},
+        "walking": {"distance": 0.0, "activities": 0, "moving_time": 0.0, "elevation_gain": 0.0},
+        "hiking": {"distance": 0.0, "activities": 0, "moving_time": 0.0, "elevation_gain": 0.0},
+        "trailRunning": {"distance": 0.0, "activities": 0, "moving_time": 0.0, "elevation_gain": 0.0}
+    }
+    
+    overall = {
+        "distance": 0.0,
+        "activities": len(activities)
     }
 
-    # Sum distance, time, elevation, and count sport types
     for act in activities:
         dist = act["distance_km"]
         time_min = act["moving_time_min"]
         elev = act["elevation_gain"]
         sport = act["sport_type"]
 
-        summary["totalDistance"] += dist
-        summary["totalTime"] += time_min
-        summary["totalElevation"] += elev
+        overall["distance"] += dist
 
         sport_key = SPORT_KEYS.get(sport)
         if sport_key:
-            summary[f"{sport_key}Activities"] += 1
-            summary[f"{sport_key}Distance"] += dist
+            sports[sport_key]["distance"] += dist
+            sports[sport_key]["activities"] += 1
+            sports[sport_key]["moving_time"] += time_min * 60  # convert to seconds
+            sports[sport_key]["elevation_gain"] += elev
 
-    # Calculate average pace for Run activities (total run time / total run distance)
-    run_activities = [a for a in activities if a["sport_type"] == "Run"]
-    total_run_dist = sum(r["distance_km"] for r in run_activities)
-    total_run_time = sum(r["moving_time_min"] for r in run_activities)
+    # Format each sport
+    formatted_summary = {}
+    for sport_name, data in sports.items():
+        moving_time_sec = int(round(data["moving_time"]))
+        hours = moving_time_sec // 3600
+        minutes = (moving_time_sec % 3600) // 60
+        
+        # Format avg pace
+        moving_time_min = data["moving_time"] / 60.0
+        avg_pace = format_pace(moving_time_min, data["distance"])
+        
+        formatted_summary[sport_name] = {
+            "distance": round(data["distance"], 1),
+            "activities": data["activities"],
+            "moving_time": moving_time_sec,
+            "formatted_time": f"{hours}h {minutes}m",
+            "avg_pace": avg_pace,
+            "elevation_gain": int(round(data["elevation_gain"])),
+            # Future metrics placeholders
+            "current_streak": None,
+            "longest_streak": None,
+            "average_weekly_distance": None,
+            "monthly_totals": None,
+            "yearly_totals": None,
+            "personal_records": None,
+            "achievements": None,
+            "latest_activity": None,
+            "ai_insights": None,
+            "recovery_score": None,
+            "training_load": None
+        }
 
-    if total_run_dist > 0:
-        summary["averagePace"] = round(total_run_time / total_run_dist, 2)
-    else:
-        summary["averagePace"] = 0.0
+    formatted_summary["overall"] = {
+        "distance": round(overall["distance"], 1),
+        "activities": overall["activities"]
+    }
 
-    # Round all float summary metrics to 2 decimal places
-    summary["totalDistance"] = round(summary["totalDistance"], 2)
-    summary["totalTime"] = round(summary["totalTime"], 2)
-    summary["totalElevation"] = round(summary["totalElevation"], 2)
-
-    for sport_key in SPORT_KEYS.values():
-        dist_key = f"{sport_key}Distance"
-        summary[dist_key] = round(summary[dist_key], 2)
-
-    return summary
+    return formatted_summary
 
 def format_record(act: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     """
@@ -238,15 +261,15 @@ def print_console_summary(summary: Dict[str, Any], records: Dict[str, Any]) -> N
     print("\n========================================")
     print("📊 STRAVA ANALYTICS SUMMARY")
     print("========================================")
-    print(f"Total Activities: {summary['totalActivities']}")
-    print(f"Total Distance:   {summary['totalDistance']} km")
-    print(f"Total Time:       {summary['totalTime']} min")
-    print(f"Total Elevation:  {summary['totalElevation']} m")
+    print(f"Total Activities: {summary['overall']['activities']}")
+    print(f"Total Distance:   {summary['overall']['distance']} km")
     
     print("\n🏃 Running Statistics")
-    print(f"  Activities:     {summary['runningActivities']}")
-    print(f"  Total Distance: {summary['runningDistance']} km")
-    print(f"  Average Pace:   {summary['averagePace']} min/km")
+    run = summary['running']
+    print(f"  Activities:     {run['activities']}")
+    print(f"  Total Distance: {run['distance']} km")
+    print(f"  Average Pace:   {run['avg_pace']}")
+    print(f"  Elevation Gain: {run['elevation_gain']} m")
     
     if records["longestRun"]:
         print(f"  Longest Run:    {records['longestRun']['distance_km']} km ({records['longestRun']['name']})")
@@ -256,20 +279,24 @@ def print_console_summary(summary: Dict[str, Any], records: Dict[str, Any]) -> N
         print(f"  Max Elevation:  {records['highestElevationRun']['elevation_gain']} m ({records['highestElevationRun']['name']})")
 
     print("\n🚴 Cycling Statistics")
-    print(f"  Activities:     {summary['cyclingActivities']}")
-    print(f"  Total Distance: {summary['cyclingDistance']} km")
+    cycle = summary['cycling']
+    print(f"  Activities:     {cycle['activities']}")
+    print(f"  Total Distance: {cycle['distance']} km")
 
     print("\n🚶 Walking Statistics")
-    print(f"  Activities:     {summary['walkingActivities']}")
-    print(f"  Total Distance: {summary['walkingDistance']} km")
+    walk = summary['walking']
+    print(f"  Activities:     {walk['activities']}")
+    print(f"  Total Distance: {walk['distance']} km")
     
     print("\n🥾 Hiking Statistics")
-    print(f"  Activities:     {summary['hikingActivities']}")
-    print(f"  Total Distance: {summary['hikingDistance']} km")
+    hike = summary['hiking']
+    print(f"  Activities:     {hike['activities']}")
+    print(f"  Total Distance: {hike['distance']} km")
 
     print("\n🏔 Trail Running Statistics")
-    print(f"  Activities:     {summary['trailRunningActivities']}")
-    print(f"  Total Distance: {summary['trailRunningDistance']} km")
+    trail = summary['trailRunning']
+    print(f"  Activities:     {trail['activities']}")
+    print(f"  Total Distance: {trail['distance']} km")
     print("========================================\n")
 
 def main():

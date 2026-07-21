@@ -9,24 +9,38 @@ export interface Activity {
   pace?: number;
 }
 
+export interface ActivitySummary {
+  distance: number;
+  activities: number;
+  moving_time: number;
+  formatted_time: string;
+  avg_pace: string;
+  elevation_gain: number;
+  current_streak: number | null;
+  longest_streak: number | null;
+  average_weekly_distance: number | null;
+  monthly_totals: Record<string, number> | null;
+  yearly_totals: Record<string, number> | null;
+  personal_records: Record<string, string> | null;
+  achievements: any[] | null;
+  latest_activity: any | null;
+  ai_insights: string | null;
+  recovery_score: number | null;
+  training_load: number | null;
+}
+
+export interface OverallSummary {
+  distance: number;
+  activities: number;
+}
+
 export interface Summary {
-  totalActivities: number;
-  runningActivities: number;
-  cyclingActivities: number;
-  walkingActivities: number;
-  hikingActivities: number;
-  trailRunningActivities: number;
-
-  totalDistance: number;
-  runningDistance: number;
-  cyclingDistance: number;
-  walkingDistance: number;
-  hikingDistance: number;
-  trailRunningDistance: number;
-
-  totalTime: number;
-  averagePace: number;
-  totalElevation: number;
+  running: ActivitySummary;
+  cycling: ActivitySummary;
+  walking: ActivitySummary;
+  hiking: ActivitySummary;
+  trailRunning: ActivitySummary;
+  overall: OverallSummary;
 }
 
 export interface Records {

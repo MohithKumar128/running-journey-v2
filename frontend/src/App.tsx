@@ -222,7 +222,7 @@ function App() {
             <p className="text-brand-orange text-lg md:text-2xl font-black uppercase tracking-[0.5em]">Proof of the Grind</p>
           </div>
           <MilestoneTracker 
-            totalDistance={stats.summary.totalDistance}
+            totalDistance={stats.summary.running.distance}
             personalBests={{
               "1.5K": "5:33",
               "5K": "22:45",
